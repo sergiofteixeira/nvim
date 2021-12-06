@@ -26,7 +26,7 @@ set scrolloff=10
 set expandtab
 set mouse=a
 "let loaded_matchparen = 1
-set shell=fish
+set shell=bash
 set backupskip=/tmp/*,/private/tmp/*
 
 " incremental substitution (neovim)
@@ -146,5 +146,7 @@ endif
 " ---------------------------------------------------------------------
 set exrc
 "}}}
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
 
 " vim: set foldmethod=marker foldlevel=0:
