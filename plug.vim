@@ -31,6 +31,7 @@ if has("nvim")
   Plug 'preservim/nerdcommenter'
   Plug 'preservim/nerdtree'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'dracula/vim'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
