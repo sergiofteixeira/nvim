@@ -1,4 +1,5 @@
 local status, lualine = pcall(require, "lualine")
+local gps = require("nvim-gps")
 if (not status) then return end
 
 lualine.setup {
@@ -10,9 +11,12 @@ lualine.setup {
     disabled_filetypes = {}
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch'},
-    lualine_c = {{
+    lualine_a = {'branch'},
+    lualine_b = {'mode'},
+    lualine_c = {
+        { gps.get_location, cond = gps.is_available },
+      },
+    lualine_d = {{
       'filename',
       file_status = true, -- displays file status (readonly status, modified status)
       path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
