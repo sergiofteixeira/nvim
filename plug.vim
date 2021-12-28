@@ -31,9 +31,9 @@ if has("nvim")
   Plug 'preservim/nerdcommenter'
   Plug 'preservim/nerdtree'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'dracula/vim'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'SmiteshP/nvim-gps'
+  Plug 'kaicataldo/material.vim'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

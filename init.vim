@@ -133,8 +133,14 @@ if exists("&termguicolors") && exists("&winblend")
   set winblend=0
   set wildoptions=pum
   set pumblend=5
+  set cursorline
   set background=dark
-  colorscheme dracula
+  let g:material_theme_style = 'darker'
+  colorscheme material
+  hi Normal       ctermbg=NONE guibg=NONE
+  hi SignColumn   ctermbg=235 guibg=#262626
+  hi LineNr       ctermfg=grey guifg=grey ctermbg=NONE guibg=NONE
+  hi CursorLineNr ctermbg=NONE guibg=NONE ctermfg=178 guifg=#d7af00
 endif
 
 "}}}
