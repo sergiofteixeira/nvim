@@ -141,6 +141,7 @@ if exists("&termguicolors") && exists("&winblend")
   hi SignColumn   ctermbg=235 guibg=#262626
   hi LineNr       ctermfg=grey guifg=grey ctermbg=NONE guibg=NONE
   hi CursorLineNr ctermbg=NONE guibg=NONE ctermfg=178 guifg=#d7af00
+  hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
 endif
 
 "}}}
