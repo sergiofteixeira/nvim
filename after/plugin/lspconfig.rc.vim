@@ -84,23 +84,12 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.flow.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
-
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  capabilities = capabilities
-}
 nvim_lsp.terraformls.setup({
   cmd = {'terraform-ls', 'serve'}
 })
 
 nvim_lsp.gopls.setup{
 	cmd = {'gopls'},
-	-- for postfix snippets and analyzers
 	capabilities = capabilities,
 	    settings = {
 	      gopls = {
@@ -115,65 +104,56 @@ nvim_lsp.gopls.setup{
 	on_attach = on_attach,
 }
 
-nvim_lsp.diagnosticls.setup {
+nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+  capabilities = capabilities,
+  init_options = {usePlaceholders = true}
+}
+
+nvim_lsp.diagnosticls.setup {
+  filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact", "css"},
   init_options = {
+    filetypes = {
+      javascript = "eslint",
+      typescript = "eslint",
+      javascriptreact = "eslint",
+      typescriptreact = "eslint"
+    },
     linters = {
       eslint = {
-        command = 'eslint_d',
-        rootPatterns = { '.git' },
+        sourceName = "eslint",
+        command = "./node_modules/.bin/eslint",
+        rootPatterns = {
+          ".eslitrc.js",
+          "package.json"
+        },
         debounce = 100,
-        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-        sourceName = 'eslint_d',
+        args = {
+          "--cache",
+          "--stdin",
+          "--stdin-filename",
+          "%filepath",
+          "--format",
+          "json"
+        },
         parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '[eslint] ${message} [${ruleId}]',
-          security = 'severity'
+          errorsRoot = "[0].messages",
+          line = "line",
+          column = "column",
+          endLine = "endLine",
+          endColumn = "endColumn",
+          message = "${message} [${ruleId}]",
+          security = "severity"
         },
         securities = {
-          [2] = 'error',
-          [1] = 'warning'
+          [2] = "error",
+          [1] = "warning"
         }
-      },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
-    },
-    formatters = {
-      eslint_d = {
-        command = 'eslint_d',
-        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-        rootPatterns = { '.git' },
-      },
-      prettier = {
-        command = 'prettier',
-        args = { '--stdin-filepath', '%filename' }
       }
-    },
-    formatFiletypes = {
-      css = 'prettier',
-      javascript = 'eslint_d',
-      javascriptreact = 'eslint_d',
-      json = 'prettier',
-      scss = 'prettier',
-      less = 'prettier',
-      typescript = 'eslint_d',
-      typescriptreact = 'eslint_d',
-      json = 'prettier',
-      markdown = 'prettier',
     }
   }
 }
 
--- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,

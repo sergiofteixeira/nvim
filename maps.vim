@@ -13,6 +13,8 @@ nmap <leader>n :Defx<CR>
 vmap <leader>n :Defx<CR>
 vmap <C-c> "+y<Esc>
 nmap <leader>t :NERDTreeToggle<CR>
+#node
+nmap <leader>r :!node %<CR>
 
 "------------------------------
 " Windows
