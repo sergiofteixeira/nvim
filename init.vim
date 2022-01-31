@@ -101,6 +101,8 @@ au BufNewFile,BufRead *.md set filetype=markdown
 " Flow
 au BufNewFile,BufRead *.flow set filetype=javascript
 
+au BufNewFile,BufRead *.js set filetype=javascript
+
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
@@ -134,7 +136,6 @@ if exists("&termguicolors") && exists("&winblend")
   set wildoptions=pum
   set pumblend=5
   set cursorline
-  set background=dark
   let g:material_theme_style = 'darker'
   colorscheme material
   hi Normal       ctermbg=NONE guibg=NONE

@@ -8,8 +8,8 @@ Plug 'tpope/vim-fugitive'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' }
+  Plug 'neovim/nvim-lspconfig', { 'branch': 'master' }
+  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
   Plug 'folke/lsp-colors.nvim'
   Plug 'onsails/lspkind-nvim'
   Plug 'L3MON4D3/LuaSnip'
