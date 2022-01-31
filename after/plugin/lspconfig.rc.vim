@@ -157,9 +157,9 @@ nvim_lsp.diagnosticls.setup {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
-    -- This sets the spacing and the prefix, obviously.
+    signs = true,
     virtual_text = {
-      spacing = 4,
+      spacing = 0,
       prefix = ''
     }
   }

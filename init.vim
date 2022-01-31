@@ -10,7 +10,6 @@ if !1 | finish | endif
 
 set nocompatible
 set number
-set wrap
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
@@ -54,7 +53,7 @@ set shiftwidth=2
 set tabstop=2
 set ai "Auto indent
 set si "Smart indent
-set nowrap "No Wrap lines
+set wrap
 set backspace=start,eol,indent
 " Finding files - Search down into subfolders
 set path+=**
