@@ -28,7 +28,7 @@ if has("nvim")
   Plug 'ryanoasis/vim-devicons'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'SmiteshP/nvim-gps'
-  Plug 'kaicataldo/material.vim'
+  Plug 'Mofiqul/vscode.nvim'
 endif
 
 call plug#end()

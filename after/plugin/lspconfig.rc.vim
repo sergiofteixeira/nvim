@@ -105,6 +105,14 @@ nvim_lsp.tsserver.setup {
   init_options = {usePlaceholders = true}
 }
 
+nvim_lsp.yamlls.setup{
+  settings = {
+      yaml = {
+         schemas = { kubernetes = "globPattern" },
+    }
+  }
+}
+
 nvim_lsp.diagnosticls.setup {
   filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact", "css"},
   init_options = {

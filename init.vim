@@ -136,8 +136,6 @@ if exists("&termguicolors") && exists("&winblend")
   set wildoptions=pum
   set pumblend=5
   set cursorline
-  let g:material_theme_style = 'darker'
-  colorscheme material
   hi Normal       ctermbg=NONE guibg=NONE
   hi SignColumn   ctermbg=235 guibg=#262626
   hi LineNr       ctermfg=grey guifg=grey ctermbg=NONE guibg=NONE
@@ -151,6 +149,8 @@ endif
 " ---------------------------------------------------------------------
 set exrc
 "}}}
+let g:vscode_style = "dark"
+colorscheme vscode
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 
