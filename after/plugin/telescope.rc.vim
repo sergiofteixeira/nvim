@@ -9,6 +9,7 @@ lua << EOF
 local actions = require('telescope.actions')
 -- Global remapping
 ------------------------------
+require("telescope").load_extension('harpoon')
 require('telescope').setup{
   defaults = {
     mappings = {
