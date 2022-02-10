@@ -9,7 +9,6 @@ nmap <C-a> gg<S-v>G
 map <leader>q :q<CR>
 map <leader>s :w<CR>
 vmap <C-c> "+y<Esc>
-nmap <leader>t :NERDTreeToggle<CR>
 nmap <leader>r :!node %<CR>
 nmap <leader>k :!kubectl apply -f %<CR>
 nmap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
@@ -18,6 +17,9 @@ nmap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
 nmap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
 nmap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
 nmap <leader>m :lua require("harpoon.mark").add_file()<CR>
+nmap <leader>g :g<CR>
+nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
 
 "------------------------------
 " Windows

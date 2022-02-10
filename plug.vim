@@ -25,11 +25,12 @@ if has("nvim")
   Plug 'hashivim/vim-terraform'
   Plug 'juliosueiras/vim-terraform-completion'
   Plug 'preservim/nerdcommenter'
-  Plug 'preservim/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'SmiteshP/nvim-gps'
   Plug 'Mofiqul/vscode.nvim'
+  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'kyazdani42/nvim-web-devicons'
 endif
 
 call plug#end()
