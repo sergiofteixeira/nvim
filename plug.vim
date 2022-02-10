@@ -28,10 +28,10 @@ if has("nvim")
   Plug 'ryanoasis/vim-devicons'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'SmiteshP/nvim-gps'
-  Plug 'Mofiqul/vscode.nvim'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'tjdevries/colorbuddy.vim'
+  Plug 'tjdevries/gruvbuddy.nvim'
 endif
 
 call plug#end()
-

@@ -149,8 +149,7 @@ endif
 " ---------------------------------------------------------------------
 set exrc
 "}}}
-let g:vscode_style = "dark"
-colorscheme vscode
+lua require('colorbuddy').colorscheme('gruvbuddy')
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 let g:nvim_tree_width = 100
