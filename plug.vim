@@ -30,8 +30,7 @@ if has("nvim")
   Plug 'SmiteshP/nvim-gps'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'tjdevries/colorbuddy.vim'
-  Plug 'tjdevries/gruvbuddy.nvim'
+  Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 endif
 
 call plug#end()
