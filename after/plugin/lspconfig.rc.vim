@@ -105,18 +105,6 @@ nvim_lsp.tsserver.setup {
   init_options = {usePlaceholders = true}
 }
 
-nvim_lsp.yamlls.setup{
-  settings = {
-      yaml = {
-         schemas = { 
-           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.1-standalone/all.json"] = "/*.{yaml,yml}",
-           ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"]= "clusters/dev/workflows/{templates,jobs}/*.yml",
-           ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"]= "clusters/dev/workflows/{templates,jobs}/*.yml",
-           ["https://raw.githubusercontent.com/daniel-codefresh/argo-events/add-json-schema/api/jsonschema/schema.json"]= "clusters/dev/workflows/sensors/*.yml",
-         },
-    }
-  }
-}
 
 nvim_lsp.diagnosticls.setup {
   filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact", "css"},

@@ -125,31 +125,11 @@ endif
 runtime ./maps.vim
 "}}}
 
-" Syntax theme "{{{
-" ---------------------------------------------------------------------
-
-" true color
-if exists("&termguicolors") && exists("&winblend")
-  syntax enable
-  set termguicolors
-  set winblend=0
-  set wildoptions=pum
-  set pumblend=5
-  set cursorline
-  hi Normal       ctermbg=NONE guibg=NONE
-  hi SignColumn   ctermbg=235 guibg=#262626
-  hi LineNr       ctermfg=grey guifg=grey ctermbg=NONE guibg=NONE
-  hi CursorLineNr ctermbg=NONE guibg=NONE ctermfg=178 guifg=#d7af00
-  hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
-endif
-
-"}}}
 
 " Extras "{{{
 " ---------------------------------------------------------------------
 set exrc
 "}}}
-colorscheme catppuccin
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 let g:nvim_tree_width = 100
