@@ -15,13 +15,12 @@ set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set title
 set autoindent
-set background=dark
 set nobackup
 set hlsearch
 set showcmd
 set cmdheight=1
 set laststatus=2
-set clipboard=unnamed
+"set clipboard=unnamed
 set scrolloff=10
 set expandtab
 set mouse=a
