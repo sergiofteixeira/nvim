@@ -30,8 +30,7 @@ if has("nvim")
   Plug 'SmiteshP/nvim-gps'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'gruvbox-community/gruvbox'
-  Plug 'projekt0n/github-nvim-theme'
+  Plug 'Mofiqul/vscode.nvim'
 endif
 
 call plug#end()

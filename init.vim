@@ -158,14 +158,8 @@ let g:nvim_tree_icons = {
     \ }
 
 
-let g:github_function_style = "italic"
-let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
-
-" Change the "hint" color to the "orange" color, and make the "error" color bright red
-let g:github_colors = {
-  \ 'hint': 'orange',
-  \ 'error': '#ff0000'
-\ }
-
 " Load the colorscheme
-colorscheme github_dark
+let g:vscode_style = "dark"
+let g:vscode_disable_nvimtree_bg = v:true
+let g:vscode_italic_comment = 1
+colorscheme vscode

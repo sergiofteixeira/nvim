@@ -20,8 +20,6 @@ nmap <leader>m :lua require("harpoon.mark").add_file()<CR>
 nmap <leader>g :g<CR>
 nnoremap <leader>t :NvimTreeToggle<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
-nmap <leader>l :colorscheme github_light<CR>
-nmap <leader>d :colorscheme github_dark<CR>
 nmap <leader><leader> :Telescope buffers<CR>
 
 "------------------------------
