@@ -5,7 +5,7 @@ if (not status) then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'vscode',
+    theme = 'base16',
     section_separators = {'', ''},
     component_separators = {'', ''},
     disabled_filetypes = {}

@@ -2,10 +2,8 @@
 nnoremap <Space> <Nop>
 let mapleader = " "
 
-" Select all
 nmap <C-a> gg<S-v>G
 
-" Open current directory
 map <leader>q :q<CR>
 map <leader>s :w<CR>
 vmap <C-c> "+y<Esc>
@@ -20,11 +18,6 @@ nmap <leader>m :lua require("harpoon.mark").add_file()<CR>
 nmap <leader>g :g<CR>
 nnoremap <leader>t :NvimTreeToggle<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
-nmap <leader><leader> :Telescope buffers<CR>
 
-"------------------------------
-" Windows
-
-" Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w

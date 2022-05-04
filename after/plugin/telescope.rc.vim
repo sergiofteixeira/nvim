@@ -1,6 +1,6 @@
 if !exists('g:loaded_telescope') | finish | endif
 
-nnoremap <leader>f <cmd>Telescope find_files<cr>
+nnoremap <leader>f <cmd>Telescope find_files({ winblend = 10 })<cr>
 nnoremap <leader>/ <cmd>Telescope live_grep<cr>
 nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.git_commits{}<CR>
 nnoremap <Leader>gs <cmd>lua require'telescope.builtin'.git_status{}<CR>
@@ -21,3 +21,4 @@ require('telescope').setup{
 }
 EOF
 
+hi TelescopeBorder guifg=#5eacd

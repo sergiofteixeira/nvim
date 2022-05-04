@@ -30,7 +30,7 @@ if has("nvim")
   Plug 'SmiteshP/nvim-gps'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'Mofiqul/vscode.nvim'
+  Plug 'RRethy/nvim-base16'
 endif
 
 call plug#end()
