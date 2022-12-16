@@ -4,12 +4,10 @@ endif
 
 call plug#begin()
 
-Plug 'tpope/vim-fugitive'
-
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
   Plug 'neovim/nvim-lspconfig', { 'branch': 'master' }
-  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
+  Plug 'tami5/lspsaga.nvim',
   Plug 'folke/lsp-colors.nvim'
   Plug 'onsails/lspkind-nvim'
   Plug 'L3MON4D3/LuaSnip'
@@ -30,7 +28,14 @@ if has("nvim")
   Plug 'SmiteshP/nvim-gps'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'RRethy/nvim-base16'
+  Plug 'williamboman/nvim-lsp-installer'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+  Plug 'towolf/vim-helm'
+  Plug 'https://gitlab.com/__tpb/monokai-pro.nvim'
+  Plug 'lewis6991/gitsigns.nvim'
+  Plug 'nvim-telescope/telescope-file-browser.nvim'
+  Plug 'Shatur/neovim-ayu'
 endif
 
 call plug#end()

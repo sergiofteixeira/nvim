@@ -21,6 +21,7 @@ require'nvim-treesitter.configs'.setup {
     "fish",
     "bash",
     "json",
+    "go",
     "yaml",
   },
 }

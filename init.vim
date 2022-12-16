@@ -15,13 +15,15 @@ set hlsearch
 set showcmd
 set cmdheight=1
 set laststatus=2
-set clipboard=unnamed
+"set clipboard=unnamed
 set scrolloff=10
 set expandtab
 set mouse=a
 "let loaded_matchparen = 1
 set shell=bash
 set backupskip=/tmp/*,/private/tmp/*
+set undodir=~/.vimdid
+set undofile
 
 if has('nvim')
   set inccommand=split
@@ -69,29 +71,10 @@ runtime ./maps.vim
 set exrc
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
-let g:nvim_tree_width = 100
-let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
 
-colorscheme base16-eighties
+" Load the colorscheme
+set termguicolors
+let g:monokaipro_filter = "spectrum"
+let g:monokaipro_italic_functions = 1
+let g:monokaipro_flat_term = 1
+colorscheme monokaipro
