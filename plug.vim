@@ -32,7 +32,6 @@ if has("nvim")
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
   Plug 'towolf/vim-helm'
-  Plug 'https://gitlab.com/__tpb/monokai-pro.nvim'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-telescope/telescope-file-browser.nvim'
   Plug 'pappasam/papercolor-theme-slim'
