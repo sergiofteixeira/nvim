@@ -1,10 +1,15 @@
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
+
+-- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
+  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
@@ -38,15 +43,21 @@ return require('packer').startup(function(use)
 
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
-  use('rktjmp/lush.nvim')
   use('mcchrish/zenbones.nvim')
+  use('rktjmp/lush.nvim')
   use('lewis6991/gitsigns.nvim')
-  use('akinsho/bufferline.nvim', 'tag' = 'v3.*')
-  use('kyazdani42/nvim-web-devicons')
-  use('kyazdani42/nvim-tree.lua')
-  use('preservim/nerdcommenter')
+  use('hoob3rt/lualine.nvim')
   use('windwp/nvim-autopairs')
+  use('kyazdani42/nvim-tree.lua')
+  use('kyazdani42/nvim-web-devicons')
+  use {
+	  'akinsho/bufferline.nvim', tag = 'v3.*',
+  }
   use('hashivim/vim-terraform')
   use('juliosueiras/vim-terraform-completion')
+  use('preservim/nerdcommenter')
+  use("SmiteshP/nvim-navic")
 
+  use ({ 'projekt0n/github-nvim-theme' })
 end)
+
