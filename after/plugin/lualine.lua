@@ -1,11 +1,10 @@
 local status, lualine = pcall(require, "lualine")
-local gps = require("nvim-gps")
+local navic = require('nvim-navic')
 if (not status) then return end
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'monokaipro',
     section_separators = {'', ''},
     component_separators = {'', ''},
     disabled_filetypes = {}
@@ -14,7 +13,7 @@ lualine.setup {
     lualine_a = {'branch'},
     lualine_b = {'mode'},
     lualine_c = {
-        { gps.get_location, cond = gps.is_available },
+        { navic.get_location, cond = navic.is_available },
       },
     lualine_d = {{
       'filename',
