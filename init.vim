@@ -77,4 +77,6 @@ set termguicolors
 let g:monokaipro_filter = "spectrum"
 let g:monokaipro_italic_functions = 1
 let g:monokaipro_flat_term = 1
-colorscheme monokaipro
+"colorscheme monokaipro
+set background=light
+colorscheme PaperColorSlim

@@ -35,7 +35,9 @@ if has("nvim")
   Plug 'https://gitlab.com/__tpb/monokai-pro.nvim'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-telescope/telescope-file-browser.nvim'
-  Plug 'Shatur/neovim-ayu'
+  Plug 'pappasam/papercolor-theme-slim'
+  Plug 'mcchrish/zenbones.nvim'
+  Plug 'rktjmp/lush.nvim'
 endif
 
 call plug#end()
