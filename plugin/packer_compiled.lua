@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/Users/sergioteixeira/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  neovim = {
+    loaded = true,
+    path = "/Users/sergioteixeira/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/Users/sergioteixeira/.local/share/nvim/site/pack/packer/start/nerdcommenter",

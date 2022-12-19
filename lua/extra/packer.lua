@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
   use('juliosueiras/vim-terraform-completion')
   use('preservim/nerdcommenter')
   use("SmiteshP/nvim-navic")
+  use('rose-pine/neovim')
 
   use ({ 'projekt0n/github-nvim-theme' })
 end)

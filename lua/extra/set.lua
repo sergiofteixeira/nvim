@@ -32,4 +32,5 @@ vim.g.terraform_align = 1
 
 vim.opt.updatetime = 50
 
-vim.cmd.colorscheme("zenbones")
+vim.cmd('set background=light')
+vim.cmd.colorscheme("rose-pine")
