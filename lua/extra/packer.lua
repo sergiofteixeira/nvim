@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
   use("SmiteshP/nvim-navic")
   use('rose-pine/neovim')
 
-  use ('jose-elias-alvarez/null-ls.nvim')
+  use {'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad'}
   use 'Shatur/neovim-ayu'
 
 end)

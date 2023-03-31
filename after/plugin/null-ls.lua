@@ -16,11 +16,11 @@ local fmt = null_ls.builtins.formatting
 null_ls.setup({
 	-- setup formatters & linters
 	sources = {
-		formatting.stylua, -- lua formatter
 		formatting.markdownlint, -- markdown formatter
 		diagnostics.hadolint, -- docker formatter
 		diagnostics.flake8, -- Python
 		fmt.terraform_fmt, -- Terraform
+        formatting.packer
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
