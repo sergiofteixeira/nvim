@@ -27,10 +27,19 @@ vim.o.background = "light"
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-vim.g.terraform_fmt_on_save = 1
-vim.g.terraform_align = 1
+--vim.g.terraform_fmt_on_save = 1
+--vim.g.terraform_align = 1
+vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 
 vim.opt.updatetime = 50
 
 vim.cmd('set background=dark')
-vim.cmd.colorscheme("rose-pine")
+--vim.cmd.colorscheme("onedark")
+require('onedark').setup {
+    style = 'warm'
+}
+require('onedark').load()

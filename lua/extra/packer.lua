@@ -53,12 +53,13 @@ return require('packer').startup(function(use)
   use {
 	  'akinsho/bufferline.nvim', tag = 'v3.*',
   }
-  use('hashivim/vim-terraform')
-  use('juliosueiras/vim-terraform-completion')
   use('preservim/nerdcommenter')
   use("SmiteshP/nvim-navic")
   use('rose-pine/neovim')
 
   use ({ 'projekt0n/github-nvim-theme' })
+  use ('jose-elias-alvarez/null-ls.nvim')
+  use 'navarasu/onedark.nvim'
+
 end)
 
