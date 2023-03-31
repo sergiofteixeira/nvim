@@ -38,8 +38,4 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 vim.opt.updatetime = 50
 
 vim.cmd('set background=dark')
---vim.cmd.colorscheme("onedark")
-require('onedark').setup {
-    style = 'warm'
-}
-require('onedark').load()
+vim.cmd.colorscheme("ayu")

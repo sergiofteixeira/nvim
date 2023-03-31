@@ -57,9 +57,8 @@ return require('packer').startup(function(use)
   use("SmiteshP/nvim-navic")
   use('rose-pine/neovim')
 
-  use ({ 'projekt0n/github-nvim-theme' })
   use ('jose-elias-alvarez/null-ls.nvim')
-  use 'navarasu/onedark.nvim'
+  use 'Shatur/neovim-ayu'
 
 end)
 
