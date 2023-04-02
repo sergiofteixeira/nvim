@@ -7,6 +7,8 @@ lsp.ensure_installed({
   'eslint',
   'pyright',
   'yamlls',
+  'tflint',
+  'terraformls',
 })
 
 -- Fix Undefined global 'vim'

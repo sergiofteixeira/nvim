@@ -1,14 +1,10 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -56,9 +52,7 @@ return require('packer').startup(function(use)
   use('preservim/nerdcommenter')
   use("SmiteshP/nvim-navic")
   use('rose-pine/neovim')
-
   use {'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad'}
-  use 'Shatur/neovim-ayu'
 
 end)
 
