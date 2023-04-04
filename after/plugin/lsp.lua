@@ -6,7 +6,6 @@ lsp.ensure_installed({
   'tsserver',
   'eslint',
   'pyright',
-  'yamlls',
   'tflint',
   'terraformls',
 })
