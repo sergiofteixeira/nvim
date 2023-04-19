@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
   use("SmiteshP/nvim-navic")
   use('rose-pine/neovim')
   use {'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad'}
+  use 'Mofiqul/vscode.nvim'
 
 end)
 
