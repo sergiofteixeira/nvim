@@ -9,6 +9,7 @@ lsp.ensure_installed({
     'tflint',
     'terraformls',
     'lua_ls',
+    'gopls',
 })
 
 local cmp = require('cmp')
