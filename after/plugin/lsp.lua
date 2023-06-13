@@ -10,6 +10,7 @@ lsp.ensure_installed({
     'terraformls',
     'lua_ls',
     'gopls',
+    'helm_ls',
 })
 
 local cmp = require('cmp')
@@ -64,6 +65,27 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
+
+local configs = require('lspconfig.configs')
+local lspconfig = require('lspconfig')
+local util = require('lspconfig.util')
+
+if not configs.helm_ls then
+  configs.helm_ls = {
+    default_config = {
+      cmd = {"helm_ls", "serve"},
+      filetypes = {'helm'},
+      root_dir = function(fname)
+        return util.root_pattern('Chart.yaml')(fname)
+      end,
+    },
+  }
+end
+
+lspconfig.helm_ls.setup {
+  filetypes = {"helm"},
+  cmd = {"helm_ls", "serve"},
+}
 
 lsp.setup()
 
