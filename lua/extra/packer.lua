@@ -55,4 +55,6 @@ return require('packer').startup(function(use)
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use "lukas-reineke/indent-blankline.nvim"
     use 'towolf/vim-helm'
+    use('Bekaboo/dropbar.nvim')
+    use('maxmx03/solarized.nvim')
 end)
