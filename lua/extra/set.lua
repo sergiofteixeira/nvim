@@ -78,4 +78,4 @@ require('rose-pine').setup({
     }
 })
 vim.o.background = 'dark'
-vim.cmd [[colorscheme edge]]
+vim.cmd [[colorscheme cockatoo]]
