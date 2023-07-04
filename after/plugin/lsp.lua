@@ -11,6 +11,7 @@ lsp.ensure_installed({
     'lua_ls',
     'gopls',
     'helm_ls',
+    'dagger'
 })
 
 local cmp = require('cmp')
@@ -88,6 +89,8 @@ lspconfig.helm_ls.setup {
 }
 
 lsp.setup()
+require'lspconfig'.dagger.setup{}
+
 
 vim.diagnostic.config({
     virtual_text = true,
