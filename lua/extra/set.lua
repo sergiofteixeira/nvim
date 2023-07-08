@@ -38,3 +38,5 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 vim.opt.updatetime = 50
 
 vim.o.background = 'dark'
+
+vim.cmd [[colorscheme cockatoo]]

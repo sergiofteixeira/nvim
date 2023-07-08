@@ -54,8 +54,4 @@ return require('packer').startup(function(use)
     use('rose-pine/neovim')
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use 'towolf/vim-helm'
-    use('maxmx03/solarized.nvim')
-    use('tjdevries/colorbuddy.vim')
-    use('tjdevries/gruvbuddy.nvim')
-    use('norcalli/nvim-colorizer.lua')
 end)
