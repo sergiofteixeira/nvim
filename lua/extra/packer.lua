@@ -54,4 +54,5 @@ return require('packer').startup(function(use)
     use('rose-pine/neovim')
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use 'towolf/vim-helm'
+    use('loctvl842/monokai-pro.nvim')
 end)

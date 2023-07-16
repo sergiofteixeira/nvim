@@ -1,49 +1,30 @@
-local status, lualine = pcall(require, "lualine")
-local navic = require('nvim-navic')
-if (not status) then return end
-
-lualine.setup {
-    options = {
-        icons_enabled = true,
-        section_separators = { '', '' },
-        component_separators = { '', '' },
-        disabled_filetypes = {}
-    },
-    sections = {
-        lualine_a = { 'branch' },
-        lualine_b = { 'mode' },
-        lualine_c = {
-            { navic.get_location, cond = navic.is_available },
+require('lualine').setup{
+ colorscheme = "monokai",
+  options = {
+    theme = 'auto',
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff'},
+    lualine_c = {'buffers'},
+    lualine_x = {'tabs'},
+    lualine_y = {'progress'},
+    lualine_z = {
+      { 'diagnostics',
+        sources = {'nvim_diagnostic', 'nvim_lsp'},
+        sections = {'error', 'warn', 'info', 'hint'},
+        diagnostics_color = {
+          -- Same values as the general color option can be used here.
+          error = 'DiagnosticError', -- Changes diagnostics' error color.
+          warn  = 'DiagnosticWarn',  -- Changes diagnostics' warn color.
+          info  = 'DiagnosticInfo',  -- Changes diagnostics' info color.
+          hint  = 'DiagnosticHint',  -- Changes diagnostics' hint color.
         },
-        lualine_d = { {
-            'filename',
-            file_status = true, -- displays file status (readonly status, modified status)
-            path = 0      -- 0 = just filename, 1 = relative path, 2 = absolute path
-        } },
-        lualine_e = {
-            'lsp_progress'
-        },
-        lualine_x = {
-            { 'diagnostics', sources = { "nvim_diagnostic" },
-                symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' } },
-            'encoding',
-            'filetype'
-        },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
-    },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { {
-            'filename',
-            file_status = true, -- displays file status (readonly status, modified status)
-            path = 1      -- 0 = just filename, 1 = relative path, 2 = absolute path
-        } },
-        lualine_x = { 'location' },
-        lualine_y = {},
-        lualine_z = {}
-    },
-    tabline = {},
-    extensions = { 'fugitive' }
+        symbols = {error = 'E', warn = 'W', info = 'I', hint = 'H'},
+        colored = true,           -- Displays diagnostics status in color if set to true.
+        update_in_insert = false, -- Update diagnostics in insert mode.
+        always_visible = false,   -- Show diagnostics even if there are none.
+      }
+    }
+  }
 }

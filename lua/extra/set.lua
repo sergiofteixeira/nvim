@@ -39,4 +39,4 @@ vim.opt.updatetime = 50
 
 vim.o.background = 'dark'
 
-vim.cmd [[colorscheme cockatoo]]
+vim.cmd("colorscheme monokai-pro-classic")
