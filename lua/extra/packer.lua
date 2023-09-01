@@ -56,5 +56,6 @@ return require('packer').startup(function(use)
     use 'towolf/vim-helm'
     use('loctvl842/monokai-pro.nvim')
     use { "catppuccin/nvim", as = "catppuccin" }
-    use('xiantang/darcula-dark.nvim')
+    use { "ellisonleao/gruvbox.nvim" }
+
 end)
