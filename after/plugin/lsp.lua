@@ -4,7 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'tsserver',
-    'nil',
+    'nil_ls',
     'rnix',
     'eslint',
     'pyright',
