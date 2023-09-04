@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
 
-            -- Snippets
+            -- Snippet
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         }
@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
 
     use("folke/zen-mode.nvim")
     use("github/copilot.vim")
-    use('mcchrish/zenbones.nvim')
     use('rktjmp/lush.nvim')
     use('lewis6991/gitsigns.nvim')
     use('hoob3rt/lualine.nvim')
@@ -53,9 +52,6 @@ return require('packer').startup(function(use)
     use("SmiteshP/nvim-navic")
     use('rose-pine/neovim')
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
-    use 'towolf/vim-helm'
-    use('loctvl842/monokai-pro.nvim')
-    use { "catppuccin/nvim", as = "catppuccin" }
     use { "ellisonleao/gruvbox.nvim" }
 
 end)

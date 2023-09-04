@@ -1,5 +1,5 @@
 require('lualine').setup{
- colorscheme = "monokai",
+ colorscheme = "gruvbox",
   options = {
     theme = 'auto',
   },
