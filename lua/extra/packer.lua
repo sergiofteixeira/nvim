@@ -53,5 +53,6 @@ return require('packer').startup(function(use)
     use('rose-pine/neovim')
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use { "ellisonleao/gruvbox.nvim" }
+    use ({ 'projekt0n/github-nvim-theme' })
 
 end)
