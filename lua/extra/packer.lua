@@ -38,7 +38,6 @@ return require('packer').startup(function(use)
     }
 
     use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
     use('rktjmp/lush.nvim')
     use('lewis6991/gitsigns.nvim')
     use('hoob3rt/lualine.nvim')
@@ -50,10 +49,7 @@ return require('packer').startup(function(use)
     }
     use('preservim/nerdcommenter')
     use("SmiteshP/nvim-navic")
-    use('rose-pine/neovim')
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use { "ellisonleao/gruvbox.nvim" }
-    use ({ 'projekt0n/github-nvim-theme' })
-    use ('shaunsingh/solarized.nvim')
 
 end)
