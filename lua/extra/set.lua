@@ -36,4 +36,4 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 
 vim.opt.updatetime = 50
 
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("solarized-osaka")
