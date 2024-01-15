@@ -50,7 +50,6 @@ return require('packer').startup(function(use)
     use('preservim/nerdcommenter')
     use("SmiteshP/nvim-navic")
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
-    use { "ellisonleao/gruvbox.nvim" }
-    use('craftzdog/solarized-osaka.nvim')
+    use('mellow-theme/mellow.nvim')
 
 end)

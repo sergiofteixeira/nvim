@@ -2,7 +2,9 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
     'tsserver',
     'nil_ls',
     'rnix',
@@ -12,6 +14,7 @@ lsp.ensure_installed({
     'terraformls',
     'lua_ls',
     'gopls',
+  },
 })
 
 local cmp = require('cmp')
@@ -25,10 +28,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
