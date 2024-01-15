@@ -1,33 +1,38 @@
 local lsp = require("lsp-zero")
+local cmp_format = require('lsp-zero').cmp_format()
+local cmp = require('cmp')
 
 lsp.preset("recommended")
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {
-    'tsserver',
-    'nil_ls',
-    'rnix',
-    'eslint',
-    'pyright',
-    'tflint',
-    'terraformls',
-    'lua_ls',
-    'gopls',
-  },
+    ensure_installed = {
+        'tsserver',
+        'nil_ls',
+        'rnix',
+        'eslint',
+        'pyright',
+        'tflint',
+        'terraformls',
+        'lua_ls',
+        'gopls',
+    },
+    handlers = {
+        lsp.default_setup,
+    }
 })
 
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
+cmp.setup({
+    formatting = cmp_format,
+    mapping = cmp.mapping.preset.insert({
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        },
+    }),
 })
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
@@ -65,7 +70,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
-require'lspconfig'.dagger.setup{}
+require 'lspconfig'.dagger.setup {}
 
 
 vim.diagnostic.config({
