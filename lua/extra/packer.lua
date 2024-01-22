@@ -51,5 +51,6 @@ return require('packer').startup(function(use)
     use("SmiteshP/nvim-navic")
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use('mellow-theme/mellow.nvim')
+    use('olivercederborg/poimandres.nvim')
 
 end)
