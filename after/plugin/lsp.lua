@@ -1,6 +1,8 @@
 local lsp = require("lsp-zero")
 local cmp_format = require('lsp-zero').cmp_format()
 local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+local lspkind = require 'lspkind'
 
 lsp.preset("recommended")
 
@@ -23,8 +25,27 @@ require('mason-lspconfig').setup({
 })
 
 cmp.setup({
-    formatting = cmp_format,
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            preset = 'codicons',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            show_labelDetails = true,
+            before = function(entry, vim_item)
+                return vim_item
+            end
+        }),
+    },
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'luasnip' },
+        { name = 'nvim_lua' },
+    },
     mapping = cmp.mapping.preset.insert({
+        ['<Tab>'] = cmp_action.luasnip_supertab(),
+        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<CR>'] = cmp.mapping.confirm {
