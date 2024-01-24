@@ -4,6 +4,8 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 local lspkind = require 'lspkind'
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 lsp.preset("recommended")
 
 require('mason').setup({})
