@@ -1,8 +1,8 @@
 local lsp = require("lsp-zero")
-local cmp_format = require('lsp-zero').cmp_format()
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 local lspkind = require 'lspkind'
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -66,6 +66,11 @@ cmp.setup({
         },
     }),
 })
+
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 
 lsp.set_preferences({
     suggest_lsp_servers = false,

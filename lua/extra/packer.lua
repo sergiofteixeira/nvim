@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 
     use('lewis6991/gitsigns.nvim')
     use('hoob3rt/lualine.nvim')
+    use('windwp/nvim-autopairs')
     use('kyazdani42/nvim-tree.lua')
     use('kyazdani42/nvim-web-devicons')
     use {
@@ -49,5 +50,6 @@ return require('packer').startup(function(use)
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use('olivercederborg/poimandres.nvim')
     use('onsails/lspkind.nvim')
+    use('tanvirtin/monokai.nvim')
 
 end)
