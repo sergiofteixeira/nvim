@@ -48,8 +48,6 @@ return require('packer').startup(function(use)
     use('preservim/nerdcommenter')
     use("SmiteshP/nvim-navic")
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
-    use('olivercederborg/poimandres.nvim')
     use('onsails/lspkind.nvim')
-    use('tanvirtin/monokai.nvim')
-
+    use('rebelot/kanagawa.nvim')
 end)
