@@ -20,7 +20,6 @@ require('mason-lspconfig').setup({
         'terraformls',
         'lua_ls',
         'gopls',
-        'ruff_lsp',
     },
     handlers = {
         lsp.default_setup,
