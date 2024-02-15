@@ -49,6 +49,5 @@ return require('packer').startup(function(use)
     use("SmiteshP/nvim-navic")
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use('onsails/lspkind.nvim')
-    use('rebelot/kanagawa.nvim')
-    use { 'maxmx03/solarized.nvim' }
+    use { "ellisonleao/gruvbox.nvim" }
 end)
