@@ -40,9 +40,9 @@ require("gruvbox").setup({
     terminal_colors = true,
     undercurl = true,
     underline = true,
-    bold = true,
+    bold = false,
     italic = {
-        strings = true,
+        strings = false,
         emphasis = true,
         comments = true,
         operators = false,
