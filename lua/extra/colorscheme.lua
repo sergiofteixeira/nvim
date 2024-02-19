@@ -1,15 +1,8 @@
-if not pcall(require, "colorbuddy") then
-  return
-end
+require("colorbuddy").colorscheme "gruvbuddy"
+require("colorizer").setup()
 
 vim.opt.termguicolors = true
 
-if vim.env.USER == "tj-wsl" then
-  rawset(require("colorbuddy").styles, "italic", require("colorbuddy").styles.none)
-end
-
-require("colorbuddy").colorscheme "gruvbuddy"
-require("colorizer").setup()
 
 local c = require("colorbuddy.color").colors
 local Group = require("colorbuddy.group").Group
