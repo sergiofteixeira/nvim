@@ -3,10 +3,9 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 local lspkind = require 'lspkind'
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local lspconf = require("lspconfig")
 
 require('luasnip.loaders.from_vscode').lazy_load()
-
-lsp.preset("recommended")
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -20,19 +19,38 @@ require('mason-lspconfig').setup({
         'terraformls',
         'lua_ls',
         'gopls',
+        'clangd',
     },
     handlers = {
         lsp.default_setup,
     }
 })
 
-require 'lspconfig'.ruff_lsp.setup {
+lspconf.ruff_lsp.setup {
     init_options = {
         settings = {
             -- Any extra CLI arguments for `ruff` go here.
             args = {},
         }
     }
+}
+
+lspconf.dagger.setup {}
+
+lspconf.clangd.setup {
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--suggest-missing-includes",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+    },
+    init_options = {
+        clangdFileStatus = true,
+    },
+    filetypes = {
+        "c",
+    },
 }
 
 cmp.setup({
@@ -67,8 +85,8 @@ cmp.setup({
 })
 
 cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
 )
 
 lsp.set_preferences({
@@ -107,8 +125,6 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
-require 'lspconfig'.dagger.setup {}
-
 
 vim.diagnostic.config({
     virtual_text = true,
