@@ -1,5 +1,5 @@
 vim.cmd.packadd('packer.nvim')
--- TODO Use lazy nvim
+-- NOTE Use lazy nvim
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
@@ -50,13 +50,5 @@ return require('packer').startup(function(use)
     use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use('onsails/lspkind.nvim')
     use('folke/tokyonight.nvim')
-    -- Lua
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config = function()
-            require("todo-comments").setup {
-            }
-        end
-    }
+    use("folke/todo-comments.nvim")
 end)
