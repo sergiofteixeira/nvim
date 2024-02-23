@@ -1,4 +1,3 @@
-vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -30,8 +29,10 @@ vim.opt.isfname:append("@-@")
 --vim.g.terraform_align = 1
 vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
 vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tf set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 
 vim.opt.updatetime = 50
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+vim.opt.guicursor = "a:blinkon1000,i-ci-ve:ver25"
