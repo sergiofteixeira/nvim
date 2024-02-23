@@ -35,4 +35,4 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 vim.opt.updatetime = 50
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
-vim.opt.guicursor = "a:blinkon1000,i-ci-ve:ver25"
+vim.opt.guicursor = "i:blinkon1000,i-ci-ve:ver25"
