@@ -3,24 +3,23 @@ if not setup then
     return
 end
 
--- for conciseness
-local formatting = null_ls.builtins.formatting   -- to setup formatters
+local fmt = null_ls.builtins
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-local fmt = null_ls.builtins.formatting
-
 -- configure null_ls
 null_ls.setup({
     -- setup formatters & linters
+    debug = true,
     sources = {
-        formatting.markdownlint, -- markdown formatter
-        diagnostics.hadolint, -- docker formatter
-        diagnostics.flake8, -- Python
-        fmt.terraform_fmt, -- Terraform
-        formatting.packer
+        diagnostics.flake8,
+        fmt.formatting.terraform_fmt,
+        fmt.formatting.terraform_fmt,
+        fmt.formatting.packer,
+        fmt.formatting.goimports,
+        fmt.formatting.gofumpt
     },
     -- configure format on save
     on_attach = function(current_client, bufnr)
