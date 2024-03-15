@@ -26,6 +26,13 @@ require('mason-lspconfig').setup({
     }
 })
 
+lspconf.gopls.setup {
+    settings = {
+        gopls = {
+            gofumpt = true
+        }
+    }
+}
 lspconf.ruff_lsp.setup {
     init_options = {
         settings = {

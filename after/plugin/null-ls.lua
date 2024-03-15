@@ -18,8 +18,7 @@ null_ls.setup({
         fmt.formatting.terraform_fmt,
         fmt.formatting.terraform_fmt,
         fmt.formatting.packer,
-        fmt.formatting.goimports,
-        fmt.formatting.gofumpt
+        fmt.formatting.goimports
     },
     -- configure format on save
     on_attach = function(current_client, bufnr)
