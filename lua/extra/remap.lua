@@ -34,3 +34,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>:!kubectl apply -f %<CR>zz")
 vim.keymap.set("n", "<leader>o", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>l", ":set background=light<CR>", { silent = true })
 vim.keymap.set("n", "<leader>d", ":set background=dark<CR>", { silent = true })
+
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
+

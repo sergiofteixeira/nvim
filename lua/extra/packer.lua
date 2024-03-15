@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
-    use('tpope/vim-fugitive')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -52,4 +51,19 @@ return require('packer').startup(function(use)
     use('folke/tokyonight.nvim')
     use("folke/todo-comments.nvim")
     use("ellisonleao/gruvbox.nvim")
+    use {
+        'VonHeikemen/fine-cmdline.nvim',
+        requires = {
+            { 'MunifTanjim/nui.nvim' }
+        }
+    }
+    use {
+        'NeogitOrg/neogit',
+        requires = {
+            { 'ibhagwan/fzf-lua',
+                'sindrets/diffview.nvim'
+            }
+
+        }
+    }
 end)
