@@ -38,3 +38,4 @@ vim.keymap.set("n", "<leader>d", ":set background=dark<CR>", { silent = true })
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
 
+vim.keymap.set("n", "<leader>g", ":Neogit<CR>", { silent = true })
