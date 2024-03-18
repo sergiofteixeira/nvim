@@ -58,6 +58,13 @@ return require('packer').startup(function(use)
         }
     }
     use {
+        "someone-stole-my-name/yaml-companion.nvim",
+        config = function()
+            require("telescope").load_extension("yaml_schema")
+        end,
+    }
+    use "b0o/schemastore.nvim"
+    use {
         'NeogitOrg/neogit',
         requires = {
             { 'ibhagwan/fzf-lua',

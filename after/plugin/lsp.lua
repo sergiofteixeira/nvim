@@ -5,6 +5,54 @@ local lspkind = require 'lspkind'
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local lspconf = require("lspconfig")
 
+local cfg = require("yaml-companion").setup {
+  builtin_matchers = {
+    kubernetes = { enabled = true }
+  },
+
+  schemas = {
+    {
+      name = "Argo CD Application",
+      uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"
+    },
+    {
+      name = "SealedSecret",
+      uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/bitnami.com/sealedsecret_v1alpha1.json"
+    },
+    -- schemas below are automatically loaded, but added
+    -- them here so that they show up in the statusline
+    {
+      name = "Kustomization",
+      uri = "https://json.schemastore.org/kustomization.json"
+    },
+    {
+      name = "GitHub Workflow",
+      uri = "https://json.schemastore.org/github-workflow.json"
+    },
+  },
+
+  lspconfig = {
+    settings = {
+      yaml = {
+        validate = true,
+        schemaStore = {
+          enable = false,
+          url = ""
+        },
+
+        -- schemas from store, matched by filename
+        -- loaded automatically
+        schemas = require('schemastore').yaml.schemas {
+          select = {
+            'kustomization.yaml',
+            'GitHub Workflow',
+          }
+        }
+      }
+    }
+  }
+}
+
 require('luasnip.loaders.from_vscode').lazy_load()
 
 require('mason').setup({})
@@ -43,6 +91,8 @@ lspconf.ruff_lsp.setup {
 }
 
 lspconf.dagger.setup {}
+
+lspconf.yamlls.setup{cfg}
 
 lspconf.clangd.setup {
     cmd = {
@@ -136,3 +186,5 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+
