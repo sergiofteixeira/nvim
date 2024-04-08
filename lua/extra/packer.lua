@@ -46,7 +46,6 @@ return require('packer').startup(function(use)
     }
     use('preservim/nerdcommenter')
     use("SmiteshP/nvim-navic")
-    use { 'prevostcorentin/null-ls.nvim', branch = 'format-hcl-nomad' }
     use('onsails/lspkind.nvim')
     use('folke/tokyonight.nvim')
     use("folke/todo-comments.nvim")
@@ -64,6 +63,8 @@ return require('packer').startup(function(use)
         end,
     }
     use "b0o/schemastore.nvim"
+    use "stevearc/conform.nvim"
+    use 'Mofiqul/vscode.nvim'
     use {
         'NeogitOrg/neogit',
         requires = {
