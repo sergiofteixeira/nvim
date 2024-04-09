@@ -96,7 +96,6 @@ lspconf.yamlls.setup { cfg }
 lspconf.nil_ls.setup {
     settings = {
         ['nil'] = {
-            testSetting = 42,
             formatting = {
                 command = { "nixfmt" },
             },
