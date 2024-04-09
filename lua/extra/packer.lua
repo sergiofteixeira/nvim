@@ -51,12 +51,6 @@ return require('packer').startup(function(use)
     use("folke/todo-comments.nvim")
     use("ellisonleao/gruvbox.nvim")
     use {
-        'VonHeikemen/fine-cmdline.nvim',
-        requires = {
-            { 'MunifTanjim/nui.nvim' }
-        }
-    }
-    use {
         "someone-stole-my-name/yaml-companion.nvim",
         config = function()
             require("telescope").load_extension("yaml_schema")
