@@ -60,7 +60,6 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'tsserver',
         'nil_ls',
-        'rnix',
         'eslint',
         'pyright',
         'tflint',
@@ -93,6 +92,17 @@ lspconf.ruff_lsp.setup {
 lspconf.dagger.setup {}
 
 lspconf.yamlls.setup { cfg }
+
+lspconf.nil_ls.setup {
+    settings = {
+        ['nil'] = {
+            testSetting = 42,
+            formatting = {
+                command = { "nixfmt" },
+            },
+        },
+    },
+}
 
 lspconf.clangd.setup {
     cmd = {
