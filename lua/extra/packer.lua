@@ -47,9 +47,7 @@ return require('packer').startup(function(use)
     use('preservim/nerdcommenter')
     use("SmiteshP/nvim-navic")
     use('onsails/lspkind.nvim')
-    use('folke/tokyonight.nvim')
     use("folke/todo-comments.nvim")
-    use("ellisonleao/gruvbox.nvim")
     use {
         "someone-stole-my-name/yaml-companion.nvim",
         config = function()
@@ -58,7 +56,7 @@ return require('packer').startup(function(use)
     }
     use "b0o/schemastore.nvim"
     use "stevearc/conform.nvim"
-    use 'Mofiqul/vscode.nvim'
+    use 'olivercederborg/poimandres.nvim'
     use {
         'NeogitOrg/neogit',
         requires = {
