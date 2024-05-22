@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
     use "b0o/schemastore.nvim"
     use "stevearc/conform.nvim"
     use 'olivercederborg/poimandres.nvim'
+    use({ 'projekt0n/github-nvim-theme' })
     use {
         'NeogitOrg/neogit',
         requires = {
