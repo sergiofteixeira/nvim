@@ -12,7 +12,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>")
 vim.keymap.set("n", "<leader>s", "<cmd>:w<CR>")
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -36,3 +35,9 @@ vim.keymap.set("n", "<leader>o", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>g", ":Neogit<CR>", { silent = true })
 vim.keymap.set('n', '<C-h>', '<C-W>h', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-W>l', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>x", "<cmd>TroubleToggle document_diagnostics<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>",
+    { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", ":Neotree toggle float<CR>", { silent = true })
+vim.keymap.set("n", "<leader>t", ":Neotree toggle left<CR>", { silent = true })

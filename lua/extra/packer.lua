@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
     use('lewis6991/gitsigns.nvim')
     use('hoob3rt/lualine.nvim')
     use('windwp/nvim-autopairs')
-    use('kyazdani42/nvim-tree.lua')
     use('kyazdani42/nvim-web-devicons')
     use {
         'akinsho/bufferline.nvim', tag = 'v3.*',
@@ -58,6 +57,15 @@ return require('packer').startup(function(use)
     use "stevearc/conform.nvim"
     use 'olivercederborg/poimandres.nvim'
     use({ 'projekt0n/github-nvim-theme' })
+    use 'folke/trouble.nvim'
+    use {
+        'nvim-neo-tree/neo-tree.nvim',
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim"
+        }
+    }
     use {
         'NeogitOrg/neogit',
         requires = {
