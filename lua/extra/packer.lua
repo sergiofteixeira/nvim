@@ -56,14 +56,20 @@ return require('packer').startup(function(use)
     use "b0o/schemastore.nvim"
     use "stevearc/conform.nvim"
     use 'olivercederborg/poimandres.nvim'
-    use({ 'projekt0n/github-nvim-theme' })
     use 'folke/trouble.nvim'
+    use { 'oneslash/helix-nvim', tag = "*" }
     use {
         'nvim-neo-tree/neo-tree.nvim',
         requires = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim"
+        }
+    }
+    use {
+        "2nthony/vitesse.nvim",
+        requires = {
+            "tjdevries/colorbuddy.nvim"
         }
     }
     use {
