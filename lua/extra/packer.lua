@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
     use('windwp/nvim-autopairs')
     use('kyazdani42/nvim-web-devicons')
     use {
-        'akinsho/bufferline.nvim', tag = 'v3.*',
+        'akinsho/bufferline.nvim',
     }
     use('preservim/nerdcommenter')
     use("SmiteshP/nvim-navic")
