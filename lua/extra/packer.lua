@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
             "tjdevries/colorbuddy.nvim"
         }
     }
+    use 'projekt0n/github-nvim-theme'
     use {
         'NeogitOrg/neogit',
         requires = {

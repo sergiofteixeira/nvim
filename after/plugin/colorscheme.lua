@@ -1,2 +1,2 @@
 -- Default options:
-vim.cmd("colorscheme vitesse")
+vim.cmd("colorscheme github_dark_default")
