@@ -73,6 +73,14 @@ return require('packer').startup(function(use)
         }
     }
     use 'projekt0n/github-nvim-theme'
+    use { 'norcalli/nvim-colorizer.lua',
+        config = function()
+            require 'colorizer'.setup {
+                'css',
+                'javascript',
+                'typescript',
+            }
+        end, }
     use {
         'NeogitOrg/neogit',
         requires = {
