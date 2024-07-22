@@ -18,20 +18,12 @@ require("neo-tree").setup({
             symbol = " ",
             highlight = "NeoTreeModified",
         },
-        icon = {
-            folder_closed = "",
-            folder_open = "",
-            folder_empty = "",
-            folder_empty_open = "",
-        },
         git_status = {
             symbols = {
-                -- Change type
                 added = "",
                 deleted = "",
                 modified = "",
                 renamed = "",
-                -- Status type
                 untracked = "",
                 ignored = "",
                 unstaged = "",
