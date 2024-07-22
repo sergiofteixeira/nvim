@@ -72,7 +72,6 @@ return require('packer').startup(function(use)
             "tjdevries/colorbuddy.nvim"
         }
     }
-    use 'projekt0n/github-nvim-theme'
     use { 'norcalli/nvim-colorizer.lua',
         config = function()
             require 'colorizer'.setup {
@@ -90,6 +89,5 @@ return require('packer').startup(function(use)
 
         }
     }
-    use 'sainnhe/gruvbox-material'
     use 'decaycs/decay.nvim'
 end)
