@@ -90,4 +90,6 @@ return require('packer').startup(function(use)
 
         }
     }
+    use 'sainnhe/gruvbox-material'
+    use 'decaycs/decay.nvim'
 end)

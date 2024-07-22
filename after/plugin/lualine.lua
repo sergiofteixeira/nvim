@@ -7,7 +7,7 @@ local function get_schema()
 end
 
 require('lualine').setup {
-    colorscheme = "vitesse",
+    --colorscheme = "vitesse",
     options = {
         theme = 'auto',
     },
