@@ -55,7 +55,6 @@ return require('packer').startup(function(use)
     }
     use "b0o/schemastore.nvim"
     use "stevearc/conform.nvim"
-    use 'olivercederborg/poimandres.nvim'
     use 'folke/trouble.nvim'
     use { 'oneslash/helix-nvim', tag = "*" }
     use {
@@ -67,20 +66,6 @@ return require('packer').startup(function(use)
         }
     }
     use {
-        "2nthony/vitesse.nvim",
-        requires = {
-            "tjdevries/colorbuddy.nvim"
-        }
-    }
-    use { 'norcalli/nvim-colorizer.lua',
-        config = function()
-            require 'colorizer'.setup {
-                'css',
-                'javascript',
-                'typescript',
-            }
-        end, }
-    use {
         'NeogitOrg/neogit',
         requires = {
             { 'ibhagwan/fzf-lua',
@@ -89,5 +74,6 @@ return require('packer').startup(function(use)
 
         }
     }
-    use 'decaycs/decay.nvim'
+    use { 'nyoom-engineering/oxocarbon.nvim' }
+    use 'yorickpeterse/vim-paper'
 end)
