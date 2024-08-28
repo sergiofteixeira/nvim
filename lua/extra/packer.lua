@@ -74,9 +74,5 @@ return require('packer').startup(function(use)
 
         }
     }
-    use { 'nyoom-engineering/oxocarbon.nvim' }
-    use 'yorickpeterse/vim-paper'
-    use { 'catppuccin/nvim', as = 'catppuccin' }
-    use "EdenEast/nightfox.nvim"
-    use "tjdevries/colorbuddy.nvim"
+    use "rebelot/kanagawa.nvim"
 end)
