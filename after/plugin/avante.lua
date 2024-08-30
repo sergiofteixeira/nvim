@@ -20,4 +20,5 @@ require('render-markdown').setup({
 })
 
 require('avante').setup({
+    provider = "gemini",
 })
