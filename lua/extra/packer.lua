@@ -75,10 +75,4 @@ return require('packer').startup(function(use)
         }
     }
     use "rebelot/kanagawa.nvim"
-    -- avante nvim --
-    use 'MeanderingProgrammer/render-markdown.nvim'
-    use 'stevearc/dressing.nvim'
-    use 'HakonHarnes/img-clip.nvim'
-    use 'zbirenbaum/copilot.lua'
-    use 'yetone/avante.nvim'
 end)
