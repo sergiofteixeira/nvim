@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["avante.nvim"] = {
+    loaded = true,
+    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/avante.nvim",
+    url = "https://github.com/yetone/avante.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -114,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
   },
+  ["copilot.lua"] = {
+    loaded = true,
+    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -123,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
+  },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -148,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/helix-nvim",
     url = "https://github.com/oneslash/helix-nvim"
+  },
+  ["img-clip.nvim"] = {
+    loaded = true,
+    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/img-clip.nvim",
+    url = "https://github.com/HakonHarnes/img-clip.nvim"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
@@ -243,6 +263,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["render-markdown.nvim"] = {
+    loaded = true,
+    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
   },
   ["schemastore.nvim"] = {
     loaded = true,

@@ -75,4 +75,10 @@ return require('packer').startup(function(use)
     }
     use "rebelot/kanagawa.nvim"
     use 'nvimdev/dashboard-nvim'
+    -- avante nvim --
+    use 'MeanderingProgrammer/render-markdown.nvim'
+    use 'stevearc/dressing.nvim'
+    use 'HakonHarnes/img-clip.nvim'
+    use 'zbirenbaum/copilot.lua'
+    use { 'yetone/avante.nvim', commit = "962dd0a759d9cba7214dbc954780c5ada5799449" }
 end)
