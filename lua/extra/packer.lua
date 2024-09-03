@@ -6,8 +6,7 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+        requires = { { 'nvim-lua/plenary.nvim' } } }
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -74,15 +73,6 @@ return require('packer').startup(function(use)
 
         }
     }
+    use 'nvimdev/dashboard-nvim'
     use "rebelot/kanagawa.nvim"
-    use {
-        'nvimdev/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup {
-                theme = "doom",
-            }
-        end,
-        requires = { 'nvim-tree/nvim-web-devicons' }
-    }
 end)
