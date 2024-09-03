@@ -73,6 +73,11 @@ return require('packer').startup(function(use)
 
         }
     }
-    use 'nvimdev/dashboard-nvim'
     use "rebelot/kanagawa.nvim"
+    use {
+        'goolord/alpha-nvim',
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+        end
+    }
 end)
