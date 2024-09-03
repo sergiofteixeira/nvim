@@ -75,4 +75,14 @@ return require('packer').startup(function(use)
         }
     }
     use "rebelot/kanagawa.nvim"
+    use {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                theme = "doom",
+            }
+        end,
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
 end)
