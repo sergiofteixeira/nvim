@@ -74,5 +74,5 @@ return require('packer').startup(function(use)
         }
     }
     use "rebelot/kanagawa.nvim"
-    use 'goolord/alpha-nvim'
+    use 'nvimdev/dashboard-nvim'
 end)
