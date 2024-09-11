@@ -1,15 +1,5 @@
-require('kanagawa').setup({
-    compile = true,
-    undercurl = true,
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true },
-    statementStyle = { bold = true },
-    typeStyle = {},
-    transparent = false,
-    dimInactive = true,
-    terminalColors = true,
-    theme = "dragon"
+require("gruvbox").setup({
+    contrast = "soft",
 })
-
-vim.cmd("colorscheme kanagawa")
+vim.cmd("set background=light")
+vim.cmd("colorscheme gruvbox")

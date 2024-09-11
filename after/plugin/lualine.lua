@@ -1,32 +1,35 @@
+local lint_progress = function()
+    local linters = require("lint").get_running()
+    if #linters == 0 then
+        return "󰦕"
+    end
+    return "󱉶 " .. table.concat(linters, ", ")
+end
 require('lualine').setup {
     colorscheme = "decay",
     options = {
-        theme = 'auto',
+        icons_enabled = true,
+        theme = "gruvbox",
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+        disabled_filetypes = {},
+        always_divide_middle = true,
+        globalstatus = true,
     },
     sections = {
-        lualine_a = { 'mode' },
-        lualine_b = { 'branch' },
-        lualine_c = { {
-            'filename',
-            file_status = true,
-            path = 1
-        } },
-        lualine_d = { 'progress' },
-        lualine_e = {
-            { 'diagnostics',
-                sources = { 'nvim_diagnostic', 'nvim_lsp' },
-                sections = { 'error', 'warn', 'info', 'hint' },
-                diagnostics_color = {
-                    error = 'DiagnosticError',
-                    warn  = 'DiagnosticWarn',
-                    info  = 'DiagnosticInfo',
-                    hint  = 'DiagnosticHint',
-                },
-                symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
-                colored = true,
-                update_in_insert = true,
-                always_visible = false,
-            }
-        }
-    }
+        lualine_a = { "mode" },
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = { lint_progress },
+        lualine_z = { "fileformat", "filetype" },
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+    },
 }

@@ -1,9 +1,15 @@
+local map = vim.api.nvim_set_keymap
 local lsp = require("lsp-zero")
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 local lspkind = require 'lspkind'
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local lspconf = require("lspconfig")
+
+local on_attach = function(client)
+    map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', {})
+    client.server_capabilities.semanticTokensProvider = nil
+end
 
 local cfg = require("yaml-companion").setup {
     builtin_matchers = {
@@ -67,6 +73,9 @@ require('mason-lspconfig').setup({
     }
 })
 
+lspconf.tsserver.setup {
+    on_attach = on_attach,
+}
 lspconf.gopls.setup {
     settings = {
         gopls = {
