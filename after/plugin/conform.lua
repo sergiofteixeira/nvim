@@ -3,19 +3,13 @@ require("conform").setup({
         lua = { "stylua" },
         go = { "goimports", "gofumpt" },
         nix = { "nixfmt" },
-        javascript = { { "prettierd", "prettier" } },
-        python = function(bufnr)
-            if require("conform").get_formatter_info("ruff_format", bufnr).available then
-                return { "ruff_format" }
-            else
-                return { "isort", "black" }
-            end
-        end,
+        python = { "isort", "black" },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
         ["*"] = { "codespell" },
         ["_"] = { "trim_whitespace" },
     },
     format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = true,
+        lsp_format = "fallback",
     },
 })
