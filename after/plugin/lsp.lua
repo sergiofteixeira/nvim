@@ -179,10 +179,10 @@ lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
     local navic = require('nvim-navic')
 
-    if client.name == "eslint" then
-        vim.cmd.LspStop('eslint')
-        return
-    end
+    --if client.name == "eslint" then
+    --vim.cmd.LspStop('eslint')
+    --return
+    --end
 
     if client.server_capabilities.documentSymbolProvider then
         navic.attach(client, bufnr)
