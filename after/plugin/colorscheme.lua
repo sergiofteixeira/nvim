@@ -1,17 +1,6 @@
-require("gruvbox").setup({
-    --contrast = "soft",
-    contrast = "",
-    terminal_colors = false,
-    undercurl = false,
-    underline = false,
-    bold = false,
-    italic = {
-        strings = false,
-        emphasis = false,
-        comments = true,
-        operators = false,
-        folds = false,
-    },
-})
+require('poimandres').setup {
+    bold_vert_split = false, -- use bold vertical separators
+    disable_italics = false, -- disable italics
+}
 vim.cmd("set background=dark")
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme poimandres")

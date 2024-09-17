@@ -6,10 +6,9 @@ local lint_progress = function()
     return "󱉶 " .. table.concat(linters, ", ")
 end
 require('lualine').setup {
-    colorscheme = "decay",
     options = {
         icons_enabled = true,
-        theme = "gruvbox",
+        theme = "poimandres",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {},

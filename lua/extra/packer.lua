@@ -81,7 +81,7 @@ return require('packer').startup(function(use)
     use 'HakonHarnes/img-clip.nvim'
     use 'zbirenbaum/copilot.lua'
     use { 'yetone/avante.nvim', commit = "962dd0a759d9cba7214dbc954780c5ada5799449" }
-    use "ellisonleao/gruvbox.nvim"
+    use 'olivercederborg/poimandres.nvim'
     use({
         "utilyre/barbecue.nvim",
         tag = "*",
