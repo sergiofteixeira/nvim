@@ -1,11 +1,9 @@
 vim.cmd.packadd('packer.nvim')
--- NOTE Use lazy nvim
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
         requires = { { 'nvim-lua/plenary.nvim' } } }
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
@@ -17,7 +15,7 @@ return require('packer').startup(function(use)
         'VonHeikemen/lsp-zero.nvim',
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },
+            { 'neovim/nvim-lspconfig',            tag = "v0.1.9" },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
 
@@ -30,11 +28,15 @@ return require('packer').startup(function(use)
             { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippet
-            { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         }
     }
 
+    use({
+        "L3MON4D3/LuaSnip",
+        tag = "v2.3.0",
+        run = "make install_jsregexp"
+    })
     use('lewis6991/gitsigns.nvim')
     use('hoob3rt/lualine.nvim')
     use('windwp/nvim-autopairs')
@@ -73,14 +75,7 @@ return require('packer').startup(function(use)
 
         }
     }
-    use "rebelot/kanagawa.nvim"
     use 'nvimdev/dashboard-nvim'
-    -- avante nvim --
-    use 'MeanderingProgrammer/render-markdown.nvim'
-    use 'stevearc/dressing.nvim'
-    use 'HakonHarnes/img-clip.nvim'
-    use 'zbirenbaum/copilot.lua'
-    use { 'yetone/avante.nvim', commit = "962dd0a759d9cba7214dbc954780c5ada5799449" }
     use 'olivercederborg/poimandres.nvim'
     use({
         "utilyre/barbecue.nvim",

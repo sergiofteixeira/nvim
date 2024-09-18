@@ -126,7 +126,6 @@ cmp.setup({
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol',
-            preset = 'codicons',
             maxwidth = 50,
             ellipsis_char = '...',
             show_labelDetails = true,
@@ -137,6 +136,8 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'nvim_lua' },
         {
             name = 'buffer',
             option = {
@@ -145,8 +146,6 @@ cmp.setup({
                 end
             }
         },
-        { name = 'luasnip' },
-        { name = 'nvim_lua' },
     },
     mapping = cmp.mapping.preset.insert({
         ['<Tab>'] = cmp_action.luasnip_supertab(),
