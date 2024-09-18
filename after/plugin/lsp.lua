@@ -58,7 +58,7 @@ require('luasnip.loaders.from_vscode').lazy_load()
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'tsserver',
+        'ts_ls',
         'nil_ls',
         'eslint',
         'pyright',
@@ -135,8 +135,8 @@ cmp.setup({
         }),
     },
     sources = {
-        { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         {
             name = 'buffer',
