@@ -79,10 +79,13 @@ _G.packer_plugins = {
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["avante.nvim"] = {
+  ["barbecue.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0" },
+    load_after = {},
     loaded = true,
-    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/avante.nvim",
-    url = "https://github.com/yetone/avante.nvim"
+    needs_bufread = false,
+    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/opt/barbecue.nvim",
+    url = "https://github.com/utilyre/barbecue.nvim"
   },
   ["bufferline.nvim"] = {
     loaded = true,
@@ -119,11 +122,6 @@ _G.packer_plugins = {
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
   },
-  ["copilot.lua"] = {
-    loaded = true,
-    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/copilot.lua",
-    url = "https://github.com/zbirenbaum/copilot.lua"
-  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -133,11 +131,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
-  },
-  ["dressing.nvim"] = {
-    loaded = true,
-    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/dressing.nvim",
-    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -163,21 +156,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/helix-nvim",
     url = "https://github.com/oneslash/helix-nvim"
-  },
-  ["img-clip.nvim"] = {
-    loaded = true,
-    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/img-clip.nvim",
-    url = "https://github.com/HakonHarnes/img-clip.nvim"
-  },
-  ["kanagawa.nvim"] = {
-    loaded = true,
-    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
-    url = "https://github.com/rebelot/kanagawa.nvim"
-  },
-  ["lsp-zero.nvim"] = {
-    loaded = true,
-    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -208,6 +186,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/NeogitOrg/neogit"
+  },
+  neovim = {
+    loaded = true,
+    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
   },
   nerdcommenter = {
     loaded = true,
@@ -264,11 +247,6 @@ _G.packer_plugins = {
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["render-markdown.nvim"] = {
-    loaded = true,
-    path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/render-markdown.nvim",
-    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
-  },
   ["schemastore.nvim"] = {
     loaded = true,
     path = "/Users/steixeira/.local/share/nvim/site/pack/packer/start/schemastore.nvim",
@@ -307,6 +285,15 @@ time([[Defining packer_plugins]], false)
 time([[Config for yaml-companion.nvim]], true)
 try_loadstring("\27LJ\2\nP\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\16yaml_schema\19load_extension\14telescope\frequire\0", "config", "yaml-companion.nvim")
 time([[Config for yaml-companion.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-web-devicons ]]
+vim.cmd [[ packadd barbecue.nvim ]]
+
+-- Config for: barbecue.nvim
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
+
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

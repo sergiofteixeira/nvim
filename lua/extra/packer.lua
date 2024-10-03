@@ -12,14 +12,11 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
 
     use {
-        'VonHeikemen/lsp-zero.nvim',
+        'neovim/nvim-lspconfig',
         requires = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig',            tag = "v0.1.9" },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
 
-            -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
@@ -27,7 +24,6 @@ return require('packer').startup(function(use)
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
 
-            -- Snippet
             { 'rafamadriz/friendly-snippets' },
         }
     }

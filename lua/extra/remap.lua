@@ -41,3 +41,4 @@ vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnos
     { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>e", ":Neotree toggle float<CR>", { silent = true })
 vim.keymap.set("n", "<leader>t", ":Neotree toggle left<CR>", { silent = true })
+vim.api.nvim_set_keymap('v', '<leader>r', ':w !node<CR>', { noremap = true, silent = true })
