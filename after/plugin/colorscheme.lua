@@ -1,6 +1,17 @@
-require('poimandres').setup {
-    bold_vert_split = false, -- use bold vertical separators
-    disable_italics = false, -- disable italics
-}
-vim.cmd("set background=dark")
-vim.cmd("colorscheme poimandres")
+require("rose-pine").setup({
+    variant = "moon",
+    dim_inactive_windows = false,
+    extend_background_behind_borders = true,
+
+    styles = {
+        bold = false,
+        italic = false,
+        transparency = true,
+    },
+
+
+})
+vim.cmd.colorscheme("rose-pine")
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

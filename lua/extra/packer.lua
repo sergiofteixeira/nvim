@@ -76,7 +76,6 @@ return require('packer').startup(function(use)
         }
     }
     use 'nvimdev/dashboard-nvim'
-    use 'olivercederborg/poimandres.nvim'
     use({
         "utilyre/barbecue.nvim",
         tag = "*",
@@ -89,4 +88,5 @@ return require('packer').startup(function(use)
             require("barbecue").setup()
         end,
     })
+    use 'rose-pine/neovim'
 end)
