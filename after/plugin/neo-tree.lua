@@ -8,6 +8,11 @@ require("neo-tree").setup({
         width = 35,
     },
     filesystem = {
+        filtered_items = {
+            always_show = {
+                ".github",
+            },
+        },
         follow_current_file = {
             enabled = true,
             leave_dirs_open = false,
