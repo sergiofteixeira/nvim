@@ -31,7 +31,24 @@ require('mason-lspconfig').setup({
 
 -- Javascript/Typescript
 lspconf.ts_ls.setup {
-    on_attach = on_attach,
+    --on_attach = on_attach,
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+    end,
+    settings = {
+        typescript = {
+            format = {
+                tabSize = 2,
+                insertSpaces = true
+            }
+        },
+        javascript = {
+            format = {
+                tabSize = 2,
+                insertSpaces = true
+            }
+        }
+    }
 }
 
 -- Lua
@@ -97,6 +114,9 @@ lspconf.nil_ls.setup {
             },
         },
     },
+}
+
+lspconf.terraformls.setup {
 }
 
 -- Clang
