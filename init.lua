@@ -20,6 +20,7 @@ vim.cmd([[colorscheme gruvbox]])
 
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
+vim.opt.ignorecase = true
 vim.opt.relativenumber = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
@@ -27,6 +28,22 @@ vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tf set filetype=terraform]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+vim.cmd([[autocmd BufRead,BufNewFile *.hujson set filetype=json]])
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+vim.opt.wrap = true
 
 -- nvim-tree binds
 
