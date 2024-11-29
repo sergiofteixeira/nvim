@@ -52,7 +52,7 @@ return {
     lspconf.ts_ls.setup {
       --on_attach = on_attach,
       on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.documentFormattingProvider = false
       end,
       settings = {
         typescript = {
