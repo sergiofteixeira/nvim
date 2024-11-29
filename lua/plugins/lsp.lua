@@ -113,7 +113,7 @@ return {
     }
 
     -- Python
-    lspconf.ruff_lsp.setup {
+    lspconf.ruff.setup {
       init_options = {
         settings = {
           args = {},
