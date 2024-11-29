@@ -1,6 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  version = nil,
+  lazy = false,
   config = function()
     require 'nvim-treesitter.configs'.setup {
       ensure_installed = { "javascript", "typescript", "c", "lua", "python", "terraform", "hcl", "go" },
@@ -9,7 +11,7 @@ return {
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
-      prefer_git = true,
     }
   end
+
 }
