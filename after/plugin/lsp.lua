@@ -18,6 +18,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'ts_ls',
     'zls',
+    'rust_analyzer',
     'nil_ls',
     'eslint',
     'pyright',
@@ -29,7 +30,7 @@ require('mason-lspconfig').setup({
   },
 })
 
-
+lspconf.rust_analyzer.setup {}
 -- Javascript/Typescript
 lspconf.ts_ls.setup {
   --on_attach = on_attach,
@@ -119,6 +120,7 @@ lspconf.nil_ls.setup {
 
 lspconf.terraformls.setup {
 }
+lspconf.zls.setup {}
 
 -- Clang
 lspconf.clangd.setup {
