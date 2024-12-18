@@ -3,23 +3,17 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'saadparwaiz1/cmp_luasnip',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-nvim-lua',
     'rafamadriz/friendly-snippets',
     'SmiteshP/nvim-navic',
     'onsails/lspkind.nvim',
+    'saghen/blink.cmp',
     'L3MON4D3/LuaSnip'
   },
   config = function()
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
     local lspconf = require("lspconfig")
     local map = vim.api.nvim_set_keymap
-    local cmp = require('cmp')
     local lspkind = require 'lspkind'
-    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
     local navic = require("nvim-navic")
     local on_attach = function(client, bufnr)
       map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', {})
@@ -72,6 +66,7 @@ return {
 
     -- Lua
     lspconf.lua_ls.setup {
+      capabilities = capabilities,
       on_init = function(client)
         if client.workspace_folders then
           local path = client.workspace_folders[1].name
@@ -104,6 +99,7 @@ return {
 
     -- Golang
     lspconf.gopls.setup {
+      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         gopls = {
@@ -155,47 +151,5 @@ return {
         "c",
       },
     }
-
-    cmp.setup({
-      formatting = {
-        format = lspkind.cmp_format({
-          mode = 'symbol',
-          maxwidth = 50,
-          ellipsis_char = '...',
-          show_labelDetails = true,
-          before = function(entry, vim_item)
-            return vim_item
-          end
-        }),
-      },
-      sources = {
-        { name = 'luasnip' },
-        { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
-        {
-          name = 'buffer',
-          option = {
-            get_bufnrs = function()
-              return vim.api.nvim_list_bufs()
-            end
-          }
-        },
-      },
-      mapping = cmp.mapping.preset.insert({
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<CR>'] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        },
-      }),
-    })
-
-    cmp.event:on(
-      'confirm_done',
-      cmp_autopairs.on_confirm_done()
-    )
   end,
 }
