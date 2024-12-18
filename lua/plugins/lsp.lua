@@ -41,10 +41,12 @@ return {
       },
     })
 
-    lspconf.rust_analyzer.setup {}
+    lspconf.rust_analyzer.setup {
+      capabilities = capabilities
+    }
     -- Javascript/Typescript
     lspconf.ts_ls.setup {
-      --on_attach = on_attach,
+      capabilities = capabilities,
       on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
       end,
@@ -110,6 +112,7 @@ return {
 
     -- Python
     lspconf.ruff.setup {
+      capabilities = capabilities,
       init_options = {
         settings = {
           args = {},
@@ -117,11 +120,14 @@ return {
       }
     }
 
-    lspconf.pyright.setup {}
+    lspconf.pyright.setup {
+      capabilities = capabilities
+    }
 
 
     -- Nix
     lspconf.nil_ls.setup {
+      capabilities = capabilities,
       settings = {
         ['nil'] = {
           formatting = {
@@ -132,11 +138,15 @@ return {
     }
 
     lspconf.terraformls.setup {
+      capabilities = capabilities
     }
-    lspconf.zls.setup {}
+    lspconf.zls.setup {
+      capabilities = capabilities
+    }
 
     -- Clang
     lspconf.clangd.setup {
+      capabilities = capabilities,
       cmd = {
         "clangd",
         "--background-index",
