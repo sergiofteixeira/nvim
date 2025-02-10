@@ -3,6 +3,8 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    'someone-stole-my-name/yaml-companion.nvim',
+    'b0o/schemastore.nvim',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -29,12 +31,53 @@ return {
       end
     end
 
+    local yamlConfig = require("yaml-companion").setup {
+      builtin_matchers = {
+        kubernetes = { enabled = true }
+      },
+
+      schemas = {
+        {
+          name = "Argo CD Application",
+          uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"
+        },
+        {
+          name = "Kustomization",
+          uri = "https://json.schemastore.org/kustomization.json"
+        },
+        {
+          name = "GitHub Workflow",
+          uri = "https://json.schemastore.org/github-workflow.json"
+        },
+      },
+
+      lspconfig = {
+        settings = {
+          yaml = {
+            validate = true,
+            schemaStore = {
+              enable = false,
+              url = ""
+            },
+
+            schemas = require('schemastore').yaml.schemas {
+              select = {
+                'kustomization.yaml',
+                'GitHub Workflow',
+              }
+            }
+          }
+        }
+      }
+    }
+
     require('luasnip.loaders.from_vscode').lazy_load()
     require('mason').setup({})
     require('mason-lspconfig').setup({
       ensure_installed = {
         'ts_ls',
         'zls',
+        'yamlls',
         'rust_analyzer',
         'nil_ls',
         'eslint',
@@ -47,6 +90,7 @@ return {
       },
     })
 
+    lspconf.yamlls.setup { yamlConfig }
     lspconf.rust_analyzer.setup {}
     -- Javascript/Typescript
     lspconf.ts_ls.setup {
