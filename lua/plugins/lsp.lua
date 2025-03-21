@@ -31,6 +31,19 @@ return {
       end
     end
 
+    local esLintCustomizations = {
+      { rule = 'style/*',   severity = 'off', fixable = true },
+      { rule = 'format/*',  severity = 'off', fixable = true },
+      { rule = '*-indent',  severity = 'off', fixable = true },
+      { rule = '*-spacing', severity = 'off', fixable = true },
+      { rule = '*-spaces',  severity = 'off', fixable = true },
+      { rule = '*-order',   severity = 'off', fixable = true },
+      { rule = '*-dangle',  severity = 'off', fixable = true },
+      { rule = '*-newline', severity = 'off', fixable = true },
+      { rule = '*quotes',   severity = 'off', fixable = true },
+      { rule = '*semi',     severity = 'off', fixable = true },
+    }
+
     local yamlConfig = require("yaml-companion").setup {
       builtin_matchers = {
         kubernetes = { enabled = true }
@@ -167,6 +180,39 @@ return {
 
     lspconf.pyright.setup {}
 
+    lspconf.eslint.setup(
+      {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+          "vue",
+          "html",
+          "markdown",
+          "json",
+          "jsonc",
+          "yaml",
+          "toml",
+          "xml",
+          "gql",
+          "graphql",
+          "astro",
+          "svelte",
+          "css",
+          "less",
+          "scss",
+          "pcss",
+          "postcss"
+        },
+        settings = {
+          rulesCustomizations = esLintCustomizations,
+        },
+      }
+    )
+
 
     -- Nix
     lspconf.nil_ls.setup {
@@ -268,5 +314,6 @@ return {
       'confirm_done',
       cmp_autopairs.on_confirm_done()
     )
+    vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename variable' })
   end,
 }
