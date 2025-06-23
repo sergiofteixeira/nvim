@@ -21,11 +21,12 @@ return {
       invert_tabline = false,
       invert_intend_guides = false,
       inverse = true,
-      contrast = "hard",
+      --contrast = "hard",
       palette_overrides = {},
       overrides = {},
       dim_inactive = false,
       transparent_mode = false,
     })
+    --vim.cmd([[colorscheme gruvbox]])
   end
 }

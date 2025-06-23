@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 vim.o.background = "dark" -- or "light" for light mode
---vim.cmd([[colorscheme gruvbox]])
 
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
@@ -72,8 +71,8 @@ vim.keymap.set('n', '<C-f>', builtin.find_files, {})
 -- generic remaps
 vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>")
 vim.keymap.set("n", "<leader>s", "<cmd>:w<CR>")
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<leader>k", "<cmd>:!kubectl apply -f %<CR>zz")
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.setqflist()<CR>", { silent = true })
 

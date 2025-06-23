@@ -89,6 +89,7 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         'ts_ls',
+        'denols',
         'zls',
         'yamlls',
         'rust_analyzer',
@@ -96,7 +97,7 @@ return {
         'eslint',
         'pyright',
         'tflint',
-        'terraformls',
+        'tofu_ls',
         'lua_ls',
         'gopls',
         'clangd',
@@ -106,10 +107,21 @@ return {
     lspconf.yamlls.setup { yamlConfig }
     lspconf.rust_analyzer.setup {}
     -- Javascript/Typescript
+    lspconf.denols.setup({
+      root_dir = lspconf.util.root_pattern('deno.json', 'deno.jsonc'),
+      -- attaches only if these files exist
+    })
     lspconf.ts_ls.setup {
       --on_attach = on_attach,
+      root_dir = function(fname)
+        -- This will use tsserver unless a deno config is present
+        local util = lspconf.util
+        return not util.root_pattern('deno.json', 'deno.jsonc')(fname)
+            and util.root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git')(fname)
+      end,
+      single_file_support = false,
       on_attach = function(client, bufnr)
-        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentFormattingProvider = true
       end,
       settings = {
         typescript = {
@@ -225,7 +237,7 @@ return {
       },
     }
 
-    lspconf.terraformls.setup {
+    lspconf.tofu_ls.setup {
     }
     lspconf.zls.setup {}
 
