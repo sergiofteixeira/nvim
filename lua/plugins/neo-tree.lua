@@ -10,6 +10,13 @@ return {
       close_if_last_window = true,
       popup_border_style = "rounded",
       enable_git_status = true,
+      default_component_configs = {
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
+        },
+      },
       enable_diagnostics = true,
       window = {
         position = "float",

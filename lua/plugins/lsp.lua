@@ -98,6 +98,7 @@ return {
         'pyright',
         'tflint',
         'tofu_ls',
+        'terraformls',
         'lua_ls',
         'gopls',
         'clangd',
@@ -237,7 +238,8 @@ return {
       },
     }
 
-    lspconf.tofu_ls.setup {
+    lspconf.terraformls.setup {
+      cmd = { "tofu-ls", "serve" },
     }
     lspconf.zls.setup {}
 
