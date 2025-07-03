@@ -93,12 +93,10 @@ return {
         'zls',
         'yamlls',
         'rust_analyzer',
-        'nil_ls',
         'eslint',
+        'terraformls',
         'pyright',
         'tflint',
-        'tofu_ls',
-        'terraformls',
         'lua_ls',
         'gopls',
         'clangd',
@@ -107,6 +105,17 @@ return {
 
     lspconf.yamlls.setup { yamlConfig }
     lspconf.rust_analyzer.setup {}
+    lspconf.terraformls.setup {}
+    lspconf.nil_ls.setup {
+      cmd = { "/etc/profiles/per-user/steixeira/bin/nil" },
+      settings = {
+        ['nil'] = {
+          formatting = {
+            command = { "nixfmt" },
+          },
+        },
+      },
+    }
     -- Javascript/Typescript
     lspconf.denols.setup({
       root_dir = lspconf.util.root_pattern('deno.json', 'deno.jsonc'),
@@ -238,9 +247,13 @@ return {
       },
     }
 
-    lspconf.terraformls.setup {
-      cmd = { "tofu-ls", "serve" },
-    }
+
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+      pattern = { "*.tf", "*.tfvars" },
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
     lspconf.zls.setup {}
 
     -- Clang
