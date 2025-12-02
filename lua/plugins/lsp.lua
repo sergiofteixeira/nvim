@@ -93,7 +93,7 @@ return {
         'yamlls',
         'rust_analyzer',
         'eslint',
-        'terraformls',
+        'tofuls',
         'pyright',
         'tflint',
         'lua_ls',
@@ -104,7 +104,7 @@ return {
 
     vim.lsp.config('yamlls', yamlConfig)
     vim.lsp.config('rust_analyzer', {})
-    vim.lsp.config('terraformls', {})
+    vim.lsp.config('tofuls', {})
     vim.lsp.config('tflint', {})
     -- Javascript/Typescript
     vim.lsp.config('denols', {
