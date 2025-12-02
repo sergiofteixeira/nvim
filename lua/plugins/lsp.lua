@@ -343,4 +343,5 @@ return {
     )
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename variable' })
   end,
+  vim.lsp.set_log_level("off")
 }
