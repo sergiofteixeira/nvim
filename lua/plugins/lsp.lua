@@ -105,16 +105,7 @@ return {
     vim.lsp.config('yamlls', yamlConfig)
     vim.lsp.config('rust_analyzer', {})
     vim.lsp.config('terraformls', {})
-    vim.lsp.config('nil_ls', {
-      cmd = { "/etc/profiles/per-user/steixeira/bin/nil" },
-      settings = {
-        ['nil'] = {
-          formatting = {
-            command = { "nixfmt" },
-          },
-        },
-      },
-    })
+    vim.lsp.config('tflint', {})
     -- Javascript/Typescript
     vim.lsp.config('denols', {
       root_dir = require("lspconfig.util").root_pattern('deno.json', 'deno.jsonc'),
