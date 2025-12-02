@@ -17,7 +17,6 @@ return {
     'L3MON4D3/LuaSnip'
   },
   config = function()
-    local lspconf = require("lspconfig")
     local map = vim.api.nvim_set_keymap
     local cmp = require('cmp')
     local lspkind = require 'lspkind'
@@ -103,10 +102,10 @@ return {
       },
     })
 
-    lspconf.yamlls.setup { yamlConfig }
-    lspconf.rust_analyzer.setup {}
-    lspconf.terraformls.setup {}
-    lspconf.nil_ls.setup {
+    vim.lsp.config('yamlls', yamlConfig)
+    vim.lsp.config('rust_analyzer', {})
+    vim.lsp.config('terraformls', {})
+    vim.lsp.config('nil_ls', {
       cmd = { "/etc/profiles/per-user/steixeira/bin/nil" },
       settings = {
         ['nil'] = {
@@ -115,17 +114,17 @@ return {
           },
         },
       },
-    }
+    })
     -- Javascript/Typescript
-    lspconf.denols.setup({
-      root_dir = lspconf.util.root_pattern('deno.json', 'deno.jsonc'),
+    vim.lsp.config('denols', {
+      root_dir = require("lspconfig.util").root_pattern('deno.json', 'deno.jsonc'),
       -- attaches only if these files exist
     })
-    lspconf.ts_ls.setup {
+    vim.lsp.config('ts_ls', {
       --on_attach = on_attach,
       root_dir = function(fname)
         -- This will use tsserver unless a deno config is present
-        local util = lspconf.util
+        local util = require("lspconfig.util")
         return not util.root_pattern('deno.json', 'deno.jsonc')(fname)
             and util.root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git')(fname)
       end,
@@ -147,10 +146,10 @@ return {
           }
         }
       }
-    }
+    })
 
     -- Lua
-    lspconf.lua_ls.setup {
+    vim.lsp.config('lua_ls', {
       on_init = function(client)
         if client.workspace_folders then
           local path = client.workspace_folders[1].name
@@ -179,30 +178,30 @@ return {
       settings = {
         Lua = {}
       }
-    }
+    })
 
     -- Golang
-    lspconf.gopls.setup {
+    vim.lsp.config('gopls', {
       on_attach = on_attach,
       settings = {
         gopls = {
           gofumpt = true
         }
       }
-    }
+    })
 
     -- Python
-    lspconf.ruff.setup {
+    vim.lsp.config('ruff', {
       init_options = {
         settings = {
           args = {},
         }
       }
-    }
+    })
 
-    lspconf.pyright.setup {}
+    vim.lsp.config('pyright', {})
 
-    lspconf.eslint.setup(
+    vim.lsp.config('eslint',
       {
         filetypes = {
           "javascript",
@@ -237,7 +236,7 @@ return {
 
 
     -- Nix
-    lspconf.nil_ls.setup {
+    vim.lsp.config('nil_ls', {
       settings = {
         ['nil'] = {
           formatting = {
@@ -245,7 +244,7 @@ return {
           },
         },
       },
-    }
+    })
 
 
     vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -254,10 +253,10 @@ return {
         vim.lsp.buf.format()
       end,
     })
-    lspconf.zls.setup {}
+    vim.lsp.config('zls', {})
 
     -- Clang
-    lspconf.clangd.setup {
+    vim.lsp.config('clangd', {
       cmd = {
         "clangd",
         "--background-index",
@@ -271,7 +270,7 @@ return {
       filetypes = {
         "c",
       },
-    }
+    })
 
     cmp.setup({
       formatting = {
