@@ -3,7 +3,6 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'someone-stole-my-name/yaml-companion.nvim',
     'b0o/schemastore.nvim',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-buffer',
@@ -43,57 +42,16 @@ return {
       { rule = '*semi',     severity = 'off', fixable = true },
     }
 
-    local yamlConfig = require("yaml-companion").setup {
-      builtin_matchers = {
-        kubernetes = { enabled = true }
-      },
-
-      schemas = {
-        {
-          name = "Argo CD Application",
-          uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"
-        },
-        {
-          name = "Kustomization",
-          uri = "https://json.schemastore.org/kustomization.json"
-        },
-        {
-          name = "GitHub Workflow",
-          uri = "https://json.schemastore.org/github-workflow.json"
-        },
-      },
-
-      lspconfig = {
-        settings = {
-          yaml = {
-            validate = true,
-            schemaStore = {
-              enable = false,
-              url = ""
-            },
-
-            schemas = require('schemastore').yaml.schemas {
-              select = {
-                'kustomization.yaml',
-                'GitHub Workflow',
-              }
-            }
-          }
-        }
-      }
-    }
-
     require('luasnip.loaders.from_vscode').lazy_load()
     require('mason').setup({})
     require('mason-lspconfig').setup({
       ensure_installed = {
-        'ts_ls',
+        'tsgo',
         'denols',
         'zls',
-        'yamlls',
         'rust_analyzer',
         'eslint',
-        'tofuls',
+        'tofu_ls',
         'pyright',
         'tflint',
         'lua_ls',
@@ -102,42 +60,11 @@ return {
       },
     })
 
-    vim.lsp.config('yamlls', yamlConfig)
     vim.lsp.config('rust_analyzer', {})
     vim.lsp.config('tofuls', {})
     vim.lsp.config('tflint', {})
     -- Javascript/Typescript
-    vim.lsp.config('denols', {
-      root_dir = require("lspconfig.util").root_pattern('deno.json', 'deno.jsonc'),
-      -- attaches only if these files exist
-    })
-    vim.lsp.config('ts_ls', {
-      --on_attach = on_attach,
-      root_dir = function(fname)
-        -- This will use tsserver unless a deno config is present
-        local util = require("lspconfig.util")
-        return not util.root_pattern('deno.json', 'deno.jsonc')(fname)
-            and util.root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git')(fname)
-      end,
-      single_file_support = false,
-      on_attach = function(client, bufnr)
-        client.server_capabilities.documentFormattingProvider = true
-      end,
-      settings = {
-        typescript = {
-          format = {
-            tabSize = 2,
-            insertSpaces = true
-          }
-        },
-        javascript = {
-          format = {
-            tabSize = 2,
-            insertSpaces = true
-          }
-        }
-      }
-    })
+    vim.lsp.enable('tsgo')
 
     -- Lua
     vim.lsp.config('lua_ls', {
@@ -206,7 +133,6 @@ return {
           "markdown",
           "json",
           "jsonc",
-          "yaml",
           "toml",
           "xml",
           "gql",
@@ -298,33 +224,6 @@ return {
           select = true,
         },
       }),
-    })
-    local function detach_yamlls()
-      local clients = vim.lsp.get_active_clients()
-      for client_id, client in pairs(clients) do
-        if client.name == "yamlls" then
-          vim.lsp.buf_detach_client(0, client_id)
-        end
-      end
-    end
-
-    local gotmpl_group = vim.api.nvim_create_augroup("_gotmpl", { clear = true })
-
-    -- detach yamlls from helm files
-    vim.api.nvim_create_autocmd("FileType", {
-      group = gotmpl_group,
-      pattern = "yaml",
-      callback = function()
-        vim.schedule(function()
-          local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-          for _, line in ipairs(lines) do
-            if string.match(line, "{{.+}}") then
-              vim.defer_fn(detach_yamlls, 500)
-              return
-            end
-          end
-        end)
-      end,
     })
 
     cmp.event:on(

@@ -72,7 +72,10 @@ vim.keymap.set("n", "<leader>s", "<cmd>:w<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<leader>k", "<cmd>:!kubectl apply -f %<CR>zz")
-vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.setqflist()<CR>", { silent = true })
+vim.keymap.set("n", "<leader>d", ":Telescope diagnostics<CR>", { silent = true })
+vim.keymap.set("n", "<leader>g", ":Telescope git_status<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gb", ":Telescope git_branches<CR>", { silent = true })
+vim.keymap.set("n", "<leader>g", ":Telescope git_status<CR>", { silent = true })
 
 -- neotree
 vim.keymap.set("n", "<leader>e", ":Neotree toggle float<CR>", { silent = true })
