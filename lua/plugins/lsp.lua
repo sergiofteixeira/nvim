@@ -51,7 +51,7 @@ return {
         'zls',
         'rust_analyzer',
         'eslint',
-        'terraformls',
+        'tofu_ls',
         'pyright',
         'tflint',
         'lua_ls',
@@ -61,8 +61,8 @@ return {
     })
 
     vim.lsp.config('rust_analyzer', {})
-    vim.lsp.config('terraformls', {})
-    vim.lsp.enable('terraformls')
+    vim.lsp.config('tofu_ls', {})
+    vim.lsp.enable('tofu_ls')
     vim.lsp.config('tflint', {})
     -- Javascript/Typescript
     vim.lsp.enable('tsgo')
