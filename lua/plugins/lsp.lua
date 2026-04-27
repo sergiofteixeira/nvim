@@ -51,7 +51,7 @@ return {
         'zls',
         'rust_analyzer',
         'eslint',
-        'tofu_ls',
+        'terraformls',
         'pyright',
         'tflint',
         'lua_ls',
@@ -61,7 +61,8 @@ return {
     })
 
     vim.lsp.config('rust_analyzer', {})
-    vim.lsp.config('tofuls', {})
+    vim.lsp.config('terraformls', {})
+    vim.lsp.enable('terraformls')
     vim.lsp.config('tflint', {})
     -- Javascript/Typescript
     vim.lsp.enable('tsgo')
@@ -164,12 +165,6 @@ return {
     })
 
 
-    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-      pattern = { "*.tf", "*.tfvars" },
-      callback = function()
-        vim.lsp.buf.format()
-      end,
-    })
     vim.lsp.config('zls', {})
 
     -- Clang

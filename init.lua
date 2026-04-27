@@ -37,6 +37,7 @@ vim.opt.isfname:append("@-@")
 vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
 vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tf set filetype=terraform]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tfvars set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 vim.cmd([[autocmd BufRead,BufNewFile *.hujson set filetype=json]])
 vim.o.cursorline = true
