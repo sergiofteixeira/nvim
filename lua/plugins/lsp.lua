@@ -231,6 +231,5 @@ return {
       cmp_autopairs.on_confirm_done()
     )
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename variable' })
-  end,
-  vim.lsp.set_log_level("off")
+  end
 }

@@ -1,18 +1,13 @@
-return
-{
-  'olivercederborg/poimandres.nvim',
+return {
+  'projekt0n/github-nvim-theme',
+  name = 'github-theme',
   lazy = false,
   priority = 1000,
   config = function()
-    require('poimandres').setup {
-      -- leave this setup function empty for default config
-      -- or refer to the configuration section
-      -- for configuration options
-    }
-  end,
+    require('github-theme').setup({
+      -- ...
+    })
 
-  -- optionally set the colorscheme within lazy config
-  init = function()
-    vim.cmd("colorscheme poimandres")
-  end
+    vim.cmd('colorscheme github_dark_tritanopia')
+  end,
 }

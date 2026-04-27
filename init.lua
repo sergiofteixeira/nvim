@@ -76,6 +76,8 @@ vim.keymap.set("n", "<leader>d", ":Telescope diagnostics<CR>", { silent = true }
 vim.keymap.set("n", "<leader>g", ":Telescope git_status<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gb", ":Telescope git_branches<CR>", { silent = true })
 vim.keymap.set("n", "<leader>g", ":Telescope git_status<CR>", { silent = true })
+vim.keymap.set('n', '<C-w>d', '<cmd>lua vim.diagnostic.open_float()<cr>')
+
 
 -- neotree
 vim.keymap.set("n", "<leader>e", ":Neotree toggle float<CR>", { silent = true })
