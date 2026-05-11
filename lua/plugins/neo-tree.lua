@@ -24,6 +24,8 @@ return {
       },
       filesystem = {
         filtered_items = {
+          -- Treat dotfiles as normal entries (not filtered/dimmed).
+          hide_dotfiles = false,
           always_show = {
             ".github",
           },

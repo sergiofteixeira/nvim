@@ -36,6 +36,10 @@ return function(opts)
         table.insert(args, prompt_split[1])
       end
 
+      -- Include hidden files/dirs (e.g. .github) but keep .git excluded.
+      table.insert(args, "--hidden")
+      table.insert(args, "--glob=!.git/*")
+
       if prompt_split[2] then
         table.insert(args, "-g")
 
