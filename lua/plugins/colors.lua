@@ -1,13 +1,11 @@
 return {
-  'projekt0n/github-nvim-theme',
-  name = 'github-theme',
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require('github-theme').setup({
-      -- ...
-    })
-
-    --vim.cmd('colorscheme github_dark_tritanopia')
-  end,
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.gruvbox_material_background = "hard"
+      vim.cmd.colorscheme("gruvbox-material")
+    end,
+  },
 }

@@ -55,6 +55,7 @@ return {
         'pyright',
         'tflint',
         'lua_ls',
+        'helm_ls',
         'gopls',
         'clangd',
       },
@@ -64,6 +65,19 @@ return {
     vim.lsp.config('tofu_ls', {})
     vim.lsp.enable('tofu_ls')
     vim.lsp.config('tflint', {})
+
+    -- Helm
+    vim.lsp.config('helm_ls', {
+      settings = {
+        ['helm-ls'] = {
+          yamlls = {
+            enabled = false,
+          },
+        },
+      },
+    })
+    vim.lsp.enable('helm_ls')
+
     -- Javascript/Typescript
     vim.lsp.enable('tsgo')
 

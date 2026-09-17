@@ -40,6 +40,17 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tf set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfvars set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 vim.cmd([[autocmd BufRead,BufNewFile *.hujson set filetype=json]])
+
+-- Helm chart detection
+vim.filetype.add({
+  pattern = {
+    [".*/templates/.*%.tpl"] = "helm",
+    [".*/templates/.*%.ya?ml"] = "helm",
+    ["helmfile.*%.ya?ml"] = "helm",
+    [".*/Chart%.ya?ml"] = "yaml",
+    [".*/values.*%.ya?ml"] = "yaml",
+  },
+})
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
 vim.opt.wrap = true

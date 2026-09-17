@@ -11,6 +11,8 @@ return {
       "go",
       "terraform",
       "hcl",
+      "helm",
+      "yaml",
     }
 
     local installed = require("nvim-treesitter.config").get_installed()
